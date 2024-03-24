@@ -1,0 +1,14 @@
+.login:hover {
+    background-color: #ff8e37;
+    z-index: 1;
+}
+
+.Signup {
+    background-color: #37afff;
+    z-index: 1;
+}
+
+.Signup:hover {
+    background-color: #ff8e37;
+    z-index: 1;
+}
