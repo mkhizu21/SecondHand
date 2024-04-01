@@ -1,0 +1,154 @@
+body {
+
+    margin: 0;
+    padding: 0;
+    
+}
+
+.list_style{
+    font-size: 20px;
+    text-align: right;
+    
+    border: solid 2px;
+    box-shadow: 0 0 10px 0;
+    padding:10px;
+    background-color: skyblue;
+}
+
+.sign {
+    border-radius: 2px black;
+    box-shadow: 0 0 2px 0;
+    padding: 5px;
+    transition: box-shadow 0.3s ease;
+    color:white;    
+}
+
+.sign:hover {
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.form-container {
+    display: none;
+}
+
+.form-container.active {
+    display: block;
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+input[type="number"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+}
+
+input[type="submit"] {
+    background-color: black;
+    color: white;
+    padding: 10px 70px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: rgba(0, 0, 0, 0.518)
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100%;
+}
+
+.partition {
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.text_trans {
+    font-size: 24px;
+}
+
+
+.text_trans {
+    font-size: 36px;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.text_trans span {
+    display: inline-block;
+    opacity: 0;
+    transition: opacity 1s;
+    animation: animateText 5s steps(25, end) forwards infinite;
+    animation-delay: 1s;
+    ;
+}
+
+@keyframes animateText {
+    0%, 40% { opacity: 0; transform: translateY(50px); } /* Initial and mid-point states */
+    50%, 100% { opacity: 1; transform: translateY(0); } /* Delay and final states */
+}
+
+.text_trans:hover {
+    transform: scale(1.2);
+}
+
+.ind-btn{
+    background-color: #ff8e37;
+    ;
+    color: white;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.ind-btn:hover {
+    background-color: #fe750c;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
