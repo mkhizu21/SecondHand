@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign Up</title>
+    <style>
+        
+        .SignUp {
+            font-size: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 100px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="px-3 py-2 text-bg-white border-bottom">
+            <div class="container">
+              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                  <img src="images/cover.png" alt="logo" width="200" height="100">
+                </a>
+              </div>
+            </div>
+          </div>
+    </header>
+    <div class="SignUp">
+        <h2>Sign Up</h2>
+        <form onsubmit="return validateSignUp()">
+            <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+            <input type="password" id="password" name="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+            <input type="number" id="age" name="age" placeholder="Age" required>
+            <select id="gender" name="gender" required>
+                <option value="">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="submit" value="Sign Up" style="background-color: #37afff; ">
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
