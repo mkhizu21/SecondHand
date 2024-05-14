@@ -1,17 +1,17 @@
 
 
 .primary-color{
-    color: #4e51fd;
+    color: linear-gradient(135deg, #37afff 10%, #ff8e37 100%);
 }
 
 .btn-sz-primary{
     width: 100%;
     color: white !important;
-    background-color: #4e51fd;
+    background-color:  #ff8e37;
 }
 
 .btn-sz-primary:hover{
-    background-color: #3c3ff8;
+    background-color: #37afff;
 }
 
 .main-text{
@@ -25,7 +25,7 @@
     border: none !important;
     box-shadow: none !important;
     border-radius: 0px !important;
-    border-bottom: 2px solid #4e51fd !important;
+    border-bottom: 2px solid #37afff !important;
 }
 .container{
     width: 100%;

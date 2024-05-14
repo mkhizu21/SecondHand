@@ -1,51 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en" dir="ltr">
+  <head>
     <meta charset="UTF-8">
+    <title> Register </title>
+    <link rel="stylesheet" href="css/signup_style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Sign Up</title>
-    <style>
-        
-        .SignUp {
-            font-size: 40px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-            justify-content: center;
-            padding-bottom: 100px;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="px-3 py-2 text-bg-white border-bottom">
-            <div class="container">
-              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                  <img src="images/cover.png" alt="logo" width="200" height="100">
-                </a>
-              </div>
-            </div>
-          </div>
-    </header>
-    <div class="SignUp">
-        <h2>Sign Up</h2>
-        <form onsubmit="return validateSignUp()">
-            <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
-            <input type="email" id="email" name="email" placeholder="Email" required>
-            <input type="password" id="password" name="password" placeholder="Password" required>
-            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
-            <input type="number" id="age" name="age" placeholder="Age" required>
-            <select id="gender" name="gender" required>
-                <option value="">Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
-            <input type="submit" value="Sign Up" style="background-color: #37afff; ">
-        </form>
-    </div>
     <script src="scripts.js"></script>
+  </head>
+<body>
+  <div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="registrationForm" action="login.html">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" id="fullname" placeholder="Enter your name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" id="username" placeholder="Enter your username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" id="phone" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" placeholder="Enter your password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+          </div>
+        </div>
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+        <div class="button">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function validateEmail(email) {
+      var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return re.test(email);
+    }
+
+    function validatePhone(phone) {
+      var re = /^\d{11}$/;
+      return re.test(phone);
+    }
+
+    function validatePassword(password) {
+      var re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
+      return re.test(password);
+    }
+
+    function validateForm(event) {
+      event.preventDefault();
+
+      var fullName = document.getElementById("fullname").value;
+      var username = document.getElementById("username").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      var password = document.getElementById("password").value;
+      var confirmPassword = document.getElementById("confirmPassword").value;
+      var genderMale = document.getElementById("dot-1").checked;
+      var genderFemale = document.getElementById("dot-2").checked;
+      var genderPreferNotToSay = document.getElementById("dot-3").checked;
+
+      if (!validateEmail(email)) {
+        alert("Invalid email format");
+        return false;
+      }
+      if (!validatePhone(phone)) {
+        alert("Invalid phone number format");
+        return false;
+      }
+      if (!validatePassword(password)) {
+        alert("Password must contain at least one number, one uppercase and one lowercase letter, and at least 6 characters");
+        return false;
+      }
+      if (fullName === "") {
+        alert("Full Name must be filled out");
+        return false;
+      }
+      if (username === "") {
+        alert("Username must be filled out");
+        return false;
+      }
+      if (email === "") {
+        alert("Email must be filled out");
+        return false;
+      }
+      if (phone === "") {
+        alert("Phone Number must be filled out");
+        return false;
+      }
+      if (password === "") {
+        alert("Password must be filled out");
+        return false;
+      }
+      if (confirmPassword === "") {
+        alert("Confirm Password must be filled out");
+        return false;
+      }
+      if (password !== confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+      }
+      if (!genderMale && !genderFemale && !genderPreferNotToSay) {
+        alert("Please select a gender");
+        return false;
+      }
+
+      document.getElementById("registrationForm").submit();
+      return true; // Return true to allow form submission
+      
+    }
+
+    document.getElementById("registrationForm").addEventListener("submit", validateForm);
+  </script>
 </body>
 </html>
